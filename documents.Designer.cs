@@ -31,6 +31,7 @@ namespace gestion_prof
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnQuitter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -53,14 +54,29 @@ namespace gestion_prof
             this.label2.TabIndex = 1;
             this.label2.Text = "Convention de Stage";
             // 
+            // btnQuitter
+            // 
+            this.btnQuitter.BackColor = System.Drawing.Color.LightCoral;
+            this.btnQuitter.Location = new System.Drawing.Point(679, 386);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitter.TabIndex = 6;
+            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.UseVisualStyleBackColor = false;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            // 
             // documents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "documents";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "documents";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -71,5 +87,6 @@ namespace gestion_prof
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnQuitter;
     }
 }

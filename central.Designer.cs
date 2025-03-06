@@ -56,18 +56,21 @@ namespace gestion_prof
             this.etudiantSuperviséToolStripMenuItem.Name = "etudiantSuperviséToolStripMenuItem";
             this.etudiantSuperviséToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.etudiantSuperviséToolStripMenuItem.Text = "Etudiant Supervisé";
+            this.etudiantSuperviséToolStripMenuItem.Click += new System.EventHandler(this.etudiantSuperviséToolStripMenuItem_Click);
             // 
             // suiviDeStageToolStripMenuItem
             // 
             this.suiviDeStageToolStripMenuItem.Name = "suiviDeStageToolStripMenuItem";
             this.suiviDeStageToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.suiviDeStageToolStripMenuItem.Text = "Suivi de Stage ";
+            this.suiviDeStageToolStripMenuItem.Click += new System.EventHandler(this.suiviDeStageToolStripMenuItem_Click);
             // 
             // documentsToolStripMenuItem
             // 
             this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
             this.documentsToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.documentsToolStripMenuItem.Text = "Documents";
+            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
             // 
             // parametresToolStripMenuItem
             // 
@@ -82,6 +85,7 @@ namespace gestion_prof
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             this.quitterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // central
             // 
@@ -89,10 +93,13 @@ namespace gestion_prof
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "central";
             this.Text = "Fenetre Principale";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

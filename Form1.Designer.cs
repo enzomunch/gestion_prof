@@ -80,6 +80,7 @@ namespace gestion_prof
             this.btnValider.TabIndex = 4;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // btnQuitter
             // 
@@ -90,6 +91,7 @@ namespace gestion_prof
             this.btnQuitter.TabIndex = 5;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
             // Form1
             // 
@@ -97,13 +99,16 @@ namespace gestion_prof
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(696, 355);
+            this.ControlBox = false;
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.txtMdp);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.labMdp);
             this.Controls.Add(this.labId);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fenetre de connection";
             this.ResumeLayout(false);
             this.PerformLayout();

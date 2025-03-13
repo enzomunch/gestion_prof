@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
 namespace gestion_prof
 {
    
@@ -19,9 +19,25 @@ namespace gestion_prof
 
         private void btnValider_Click(object sender, System.EventArgs e)
         {
-            this.Hide();
-            frm_central.ShowDialog();
+            try
+            {
+                //conexion a la base de donnée
+                MySqlConnection connexion_prof= new MySqlConnection("Server=localhost;Database=gestion_prof;User Id=root;Password=;");
+                connexion_prof.Open();
+                this.Hide();
+                frm_central.ShowDialog();
+                connexion_prof.Close();
+            }
+            catch
+            {
+                MessageBox.Show("connexion a la base echouer");
+            }
             
+        }
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

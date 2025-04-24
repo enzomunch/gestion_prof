@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
 namespace gestion_prof
 {
     public partial class etudiant : Form
@@ -24,25 +25,29 @@ namespace gestion_prof
 
         private void etudiant_Load(object sender, EventArgs e)
         {
-            MySqlConnection connexion_clients = new MySqlConnection("database = gestion_prof; server = localhost; user id = root; mdp=");
-            MySqlConnection conn_clients = connexion_clients;
+            MySqlConnection connexion_etudiants = new MySqlConnection("database = gestion_prof; server = localhost; user id = root; mdp=");
             try
             {
-
-                //affichage des infos clients 
-                conn_clients.Open();
-                MySqlCommand cmd_clients = new MySqlCommand("select * from etudiants ", conn_clients);
-                //execution de la requete 
-                MySqlDataReader grille_clients = cmd_clients.ExecuteReader();
+                // Requête pour récupérer la liste des étudiants
+                connexion_etudiants.Open();
+                MySqlCommand cmd_etudiants = new MySqlCommand("SELECT nomEtudiant, prenomEtudiant, mailEtudiant, telEtudiant, nomProf, nomClasse from etudiants INNER JOIN professeurs ON professeurs.numProf = etudiants.numProf INNER JOIN classes ON classes.numClasse = etudiants.numClasse", connexion_etudiants);
+                // Execution de la requete 
+                MySqlDataReader grille_etudiants = cmd_etudiants.ExecuteReader();
                 //
-                while (grille_clients.Read())
+                while (grille_etudiants.Read())
                 {
-                    dataGridViewEtudiant.Rows.Add(grille_clients[1], grille_clients[2], grille_clients[3], grille_clients[4], grille_clients[5], grille_clients[6]);
+                    dataGridViewEtudiant.Rows.Add(
+                        grille_etudiants[0],
+                        grille_etudiants[1],
+                        grille_etudiants[2],
+                        grille_etudiants[3],
+                        grille_etudiants[4],
+                        grille_etudiants[5]);
                 }
             }
             catch
             {
-                MessageBox.Show("connexion a la base client echoué ", "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Connexion à la base client echoué.", "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -29,11 +29,11 @@ namespace gestion_prof
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.labelDateDebut = new System.Windows.Forms.Label();
+            this.labelDateFin = new System.Windows.Forms.Label();
+            this.textDateDebut = new System.Windows.Forms.TextBox();
+            this.textDateFin = new System.Windows.Forms.TextBox();
+            this.buttonRecherche = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.dataGridViewStage = new System.Windows.Forms.DataGridView();
             this.nomEtudiant = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,51 +44,51 @@ namespace gestion_prof
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStage)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelDateDebut
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Date de Debut :";
+            this.labelDateDebut.AutoSize = true;
+            this.labelDateDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateDebut.Location = new System.Drawing.Point(64, 38);
+            this.labelDateDebut.Name = "labelDateDebut";
+            this.labelDateDebut.Size = new System.Drawing.Size(140, 24);
+            this.labelDateDebut.TabIndex = 0;
+            this.labelDateDebut.Text = "Date de Debut :";
             // 
-            // label2
+            // labelDateFin
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(87, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Date de Fin :";
+            this.labelDateFin.AutoSize = true;
+            this.labelDateFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateFin.Location = new System.Drawing.Point(87, 78);
+            this.labelDateFin.Name = "labelDateFin";
+            this.labelDateFin.Size = new System.Drawing.Size(117, 24);
+            this.labelDateFin.TabIndex = 1;
+            this.labelDateFin.Text = "Date de Fin :";
             // 
-            // textBox1
+            // textDateDebut
             // 
-            this.textBox1.Location = new System.Drawing.Point(210, 41);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 22);
-            this.textBox1.TabIndex = 2;
+            this.textDateDebut.Location = new System.Drawing.Point(210, 41);
+            this.textDateDebut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textDateDebut.Name = "textDateDebut";
+            this.textDateDebut.Size = new System.Drawing.Size(116, 22);
+            this.textDateDebut.TabIndex = 2;
             // 
-            // textBox2
+            // textDateFin
             // 
-            this.textBox2.Location = new System.Drawing.Point(210, 81);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(116, 22);
-            this.textBox2.TabIndex = 3;
+            this.textDateFin.Location = new System.Drawing.Point(210, 81);
+            this.textDateFin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textDateFin.Name = "textDateFin";
+            this.textDateFin.Size = new System.Drawing.Size(116, 22);
+            this.textDateFin.TabIndex = 3;
             // 
-            // button1
+            // buttonRecherche
             // 
-            this.button1.Location = new System.Drawing.Point(353, 60);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 28);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "rechercher";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRecherche.Location = new System.Drawing.Point(353, 60);
+            this.buttonRecherche.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonRecherche.Name = "buttonRecherche";
+            this.buttonRecherche.Size = new System.Drawing.Size(87, 28);
+            this.buttonRecherche.TabIndex = 4;
+            this.buttonRecherche.Text = "rechercher";
+            this.buttonRecherche.UseVisualStyleBackColor = true;
             // 
             // btnQuitter
             // 
@@ -138,6 +138,7 @@ namespace gestion_prof
             // dateStageDebut
             // 
             this.dateStageDebut.HeaderText = "Date de début";
+            this.dateStageDebut.MaxInputLength = 10;
             this.dateStageDebut.Name = "dateStageDebut";
             this.dateStageDebut.Width = 120;
             // 
@@ -156,11 +157,11 @@ namespace gestion_prof
             this.ControlBox = false;
             this.Controls.Add(this.dataGridViewStage);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonRecherche);
+            this.Controls.Add(this.textDateFin);
+            this.Controls.Add(this.textDateDebut);
+            this.Controls.Add(this.labelDateFin);
+            this.Controls.Add(this.labelDateDebut);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -176,11 +177,11 @@ namespace gestion_prof
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelDateDebut;
+        private System.Windows.Forms.Label labelDateFin;
+        private System.Windows.Forms.TextBox textDateDebut;
+        private System.Windows.Forms.TextBox textDateFin;
+        private System.Windows.Forms.Button buttonRecherche;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.DataGridView dataGridViewStage;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomEtudiant;

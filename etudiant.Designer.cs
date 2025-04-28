@@ -29,11 +29,11 @@ namespace gestion_prof
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelNom = new System.Windows.Forms.Label();
+            this.labelPrenom = new System.Windows.Forms.Label();
+            this.buttonRechercher = new System.Windows.Forms.Button();
+            this.textNom = new System.Windows.Forms.TextBox();
+            this.textPrenom = new System.Windows.Forms.TextBox();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.dataGridViewEtudiant = new System.Windows.Forms.DataGridView();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,51 +45,51 @@ namespace gestion_prof
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtudiant)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelNom
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom :";
+            this.labelNom.AutoSize = true;
+            this.labelNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNom.Location = new System.Drawing.Point(83, 45);
+            this.labelNom.Name = "labelNom";
+            this.labelNom.Size = new System.Drawing.Size(61, 24);
+            this.labelNom.TabIndex = 0;
+            this.labelNom.Text = "Nom :";
             // 
-            // label2
+            // labelPrenom
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Prenom :";
+            this.labelPrenom.AutoSize = true;
+            this.labelPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrenom.Location = new System.Drawing.Point(57, 78);
+            this.labelPrenom.Name = "labelPrenom";
+            this.labelPrenom.Size = new System.Drawing.Size(87, 24);
+            this.labelPrenom.TabIndex = 1;
+            this.labelPrenom.Text = "Prénom :";
             // 
-            // button1
+            // buttonRechercher
             // 
-            this.button1.Location = new System.Drawing.Point(304, 48);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 28);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "rechercher";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRechercher.Location = new System.Drawing.Point(297, 59);
+            this.buttonRechercher.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonRechercher.Name = "buttonRechercher";
+            this.buttonRechercher.Size = new System.Drawing.Size(87, 28);
+            this.buttonRechercher.TabIndex = 2;
+            this.buttonRechercher.Text = "rechercher";
+            this.buttonRechercher.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textNom
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 31);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 22);
-            this.textBox1.TabIndex = 3;
+            this.textNom.Location = new System.Drawing.Point(150, 45);
+            this.textNom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textNom.Name = "textNom";
+            this.textNom.Size = new System.Drawing.Size(116, 22);
+            this.textNom.TabIndex = 3;
             // 
-            // textBox2
+            // textPrenom
             // 
-            this.textBox2.Location = new System.Drawing.Point(150, 71);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(116, 22);
-            this.textBox2.TabIndex = 4;
+            this.textPrenom.Location = new System.Drawing.Point(150, 81);
+            this.textPrenom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textPrenom.Name = "textPrenom";
+            this.textPrenom.Size = new System.Drawing.Size(116, 22);
+            this.textPrenom.TabIndex = 4;
             // 
             // btnQuitter
             // 
@@ -164,11 +164,11 @@ namespace gestion_prof
             this.ControlBox = false;
             this.Controls.Add(this.dataGridViewEtudiant);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textPrenom);
+            this.Controls.Add(this.textNom);
+            this.Controls.Add(this.buttonRechercher);
+            this.Controls.Add(this.labelPrenom);
+            this.Controls.Add(this.labelNom);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -184,11 +184,11 @@ namespace gestion_prof
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label labelNom;
+        private System.Windows.Forms.Label labelPrenom;
+        private System.Windows.Forms.Button buttonRechercher;
+        private System.Windows.Forms.TextBox textNom;
+        private System.Windows.Forms.TextBox textPrenom;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.DataGridView dataGridViewEtudiant;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;

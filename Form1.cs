@@ -24,31 +24,39 @@ namespace gestion_prof
                 //declaration des variables 
                 string LOG = txtId.Text;
                 string PASS = txtMdp.Text;
+
                 //conexion a la base de donnée
                 MySqlConnection connexion_prof= new MySqlConnection("Server=localhost;Database=gestion_prof;User Id=root;Password=;");
                 connexion_prof.Open();
-                //recuperation de tout les champs de la table agents avec comme restriction le nom de l'agent saisie
-                MySqlCommand cmd = new MySqlCommand("select * from connexion where login='" + LOG + "' AND mdp ='" + PASS + "'", connexion_prof);
-                //execution de la requete  
-                MySqlDataReader recherche_agent = cmd.ExecuteReader();
-                //
-                //si l'agent est trouver 
-                if (recherche_agent.HasRows)
+
+                //recuperation le numéro du prof qui se connecte
+                MySqlCommand cmd = new MySqlCommand("select numProf from connexion where login='" + LOG + "' AND mdp ='" + PASS + "'", connexion_prof);
+                // Exécution de la requête
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                Globals.keyProf = -1; // Valeur par défaut si non trouvé
+
+                if (reader.Read()) // S'il y a un résultat
                 {
+                    Globals.keyProf = reader.GetInt32(0); // Récupération du numProf
+                    MessageBox.Show("num prof " + Globals.keyProf, "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Tu peux utiliser keyProf ici comme tu veux
                     this.Hide();
                     frm_central.ShowDialog();
-                    connexion_prof.Close();
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Identifiant ou mot de passe invalide !","Attention !",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Identifiant ou mot de passe invalide !", "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
+                reader.Close();
+                connexion_prof.Close();
             }
             catch
             {
-                MessageBox.Show("connexion a la base echouer");
+                MessageBox.Show("Connexion à la base échouée");
             }
-            
         }
 
         private void Form1_Load(object sender, System.EventArgs e)

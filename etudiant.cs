@@ -30,7 +30,7 @@ namespace gestion_prof
             {
                 // Requête pour récupérer la liste des étudiants
                 connexion_etudiants.Open();
-                MySqlCommand cmd_etudiants = new MySqlCommand("SELECT nomEtudiant, prenomEtudiant, mailEtudiant, telEtudiant, nomProf, nomClasse from etudiants INNER JOIN professeurs ON professeurs.numProf = etudiants.numProf INNER JOIN classes ON classes.numClasse = etudiants.numClasse", connexion_etudiants);
+                MySqlCommand cmd_etudiants = new MySqlCommand("SELECT nomEtudiant, prenomEtudiant, mailEtudiant, telEtudiant, nomProf, nomClasse from etudiants INNER JOIN professeurs ON professeurs.numProf = etudiants.numProf INNER JOIN classes ON classes.numClasse = etudiants.numClasse WHERE etudiants.numProf = " + Globals.keyProf, connexion_etudiants);
                 // Execution de la requete 
                 MySqlDataReader grille_etudiants = cmd_etudiants.ExecuteReader();
                 //
@@ -56,8 +56,7 @@ namespace gestion_prof
             MySqlConnection connexion = new MySqlConnection("database=gestion_prof; server=localhost; user id =root; mdp=");
             connexion.Open();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT nomEtudiant, prenomEtudiant, mailEtudiant, telEtudiant, nomProf, nomClasse from etudiants INNER JOIN professeurs ON professeurs.numProf = etudiants.numProf INNER JOIN classes ON classes.numClasse = etudiants.numClasse WHERE nomEtudiant LIKE '%" + textNom.Text + "%'"
-, connexion);
+            MySqlCommand cmd = new MySqlCommand("SELECT nomEtudiant, prenomEtudiant, mailEtudiant, telEtudiant, nomProf, nomClasse from etudiants INNER JOIN professeurs ON professeurs.numProf = etudiants.numProf INNER JOIN classes ON classes.numClasse = etudiants.numClasse WHERE nomEtudiant LIKE '%" + textNom.Text + "%' AND etudiants.numProf = "+ Globals.keyProf, connexion);
 
             MySqlDataReader recherche = cmd.ExecuteReader();
 
@@ -81,7 +80,7 @@ namespace gestion_prof
                 MessageBox.Show("Etudiant non trouvé ", "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            //  Toujours fermer le reader et la connexion
+            //Fermer le reader et la connexion
             recherche.Close();
             connexion.Close();
         }

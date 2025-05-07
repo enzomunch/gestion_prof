@@ -138,9 +138,9 @@ namespace gestion_prof
             // 
             // btnReinitialiser
             // 
-            this.btnReinitialiser.Location = new System.Drawing.Point(379, 65);
+            this.btnReinitialiser.Location = new System.Drawing.Point(379, 62);
             this.btnReinitialiser.Name = "btnReinitialiser";
-            this.btnReinitialiser.Size = new System.Drawing.Size(95, 23);
+            this.btnReinitialiser.Size = new System.Drawing.Size(95, 28);
             this.btnReinitialiser.TabIndex = 8;
             this.btnReinitialiser.Text = "Réinitialiser";
             this.btnReinitialiser.UseVisualStyleBackColor = true;
@@ -164,7 +164,7 @@ namespace gestion_prof
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "etudiant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "etudiant";
+            this.Text = "Etudiant";
             this.Load += new System.EventHandler(this.etudiant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtudiant)).EndInit();
             this.ResumeLayout(false);

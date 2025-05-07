@@ -77,7 +77,7 @@ namespace gestion_prof
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "documents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "documents";
+            this.Text = "Documents";
             this.ResumeLayout(false);
             this.PerformLayout();
 

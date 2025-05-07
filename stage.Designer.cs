@@ -167,7 +167,7 @@ namespace gestion_prof
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "stage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "stage";
+            this.Text = "Stage";
             this.Load += new System.EventHandler(this.stage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStage)).EndInit();
             this.ResumeLayout(false);

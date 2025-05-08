@@ -39,8 +39,6 @@ namespace gestion_prof
                 if (reader.Read()) // S'il y a un résultat
                 {
                     Globals.keyProf = reader.GetInt32(0); // Récupération du numProf
-                    MessageBox.Show("num prof " + Globals.keyProf, "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    // Tu peux utiliser keyProf ici comme tu veux
                     this.Hide();
                     frm_central.ShowDialog();
                     

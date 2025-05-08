@@ -15,6 +15,7 @@ namespace gestion_prof
         Form frm_etudiant = new etudiant();
         Form frm_suivi_stage = new stage();
         Form frm_document = new documents();
+        Form frm_admin = new admin();
         public central()
         {
             InitializeComponent();
@@ -38,6 +39,19 @@ namespace gestion_prof
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {           
+            frm_admin.ShowDialog();
+        }
+
+        private void central_Load(object sender, EventArgs e)
+        {
+            if (Globals.keyProf == 13)
+            {
+                adminToolStripMenuItem.Visible = true;
+            }
         }
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 07 mai 2025 à 07:35
+-- Généré le : jeu. 08 mai 2025 à 15:08
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -58,14 +58,26 @@ CREATE TABLE IF NOT EXISTS `connexion` (
   `numProf` int NOT NULL,
   PRIMARY KEY (`numConnexion`),
   KEY `numProf` (`numProf`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Déchargement des données de la table `connexion`
 --
 
 INSERT INTO `connexion` (`numConnexion`, `login`, `mdp`, `numProf`) VALUES
-(1, 'admin', 'root', 1);
+(1, 'admin', 'root', 13),
+(2, 'c.michaud', 'root', 7),
+(4, 'p.bruno', 'root', 1),
+(5, 'j.casta', 'root', 2),
+(6, 'f.gilly', 'root', 3),
+(7, 'h.godard', 'root', 4),
+(8, 'h.lefevre', 'root', 5),
+(9, 'y.markovitch', 'root', 6),
+(10, 's.pastore', 'root', 8),
+(11, 'n.peduzzi', 'root', 9),
+(12, 'l.frayssinhes', 'root', 10),
+(13, 'm.garnier', 'root', 11),
+(14, 'j.nicolas', 'root', 12);
 
 -- --------------------------------------------------------
 
@@ -167,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `etudiants` (
   PRIMARY KEY (`numEtudiant`),
   KEY `numProf` (`numProf`),
   KEY `numClasse` (`numClasse`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Déchargement des données de la table `etudiants`
@@ -181,12 +193,12 @@ INSERT INTO `etudiants` (`numEtudiant`, `nomEtudiant`, `prenomEtudiant`, `mailEt
 (7, 'BENAMAR', 'Tadj Eddine', 'tadjbenamar@gmail.com', '06 88 54 32 18', 7, 2),
 (8, 'BOUABBOUNE', 'Aymen', 'aymenbouabboume@gmail.com', '07 61 27 45 90', 7, 2),
 (9, 'GOUADJELIA', 'Amir Foued', 'amirgouadjelia97@gmail.com', '06 29 74 63 85', 7, 2),
-(10, 'KAHLA', 'Iliasse', 'kahlailiasse@gmail.com', '07 38 50 12 67', 7, 2),
-(11, 'IDOUDI', 'Sayf-Eddine', 'sdoufi25@gmail.com', '06 95 48 26 73', 7, 2),
-(12, 'KINEIDER', 'Marc Ange', 'kineider.marc@laposte.net', '07 82 61 55 98', 7, 2),
-(13, 'LEAL DIAS SEMEDO', 'Sara', 'slealsemedo@gmail.com', '06 53 79 41 20', 7, 2),
-(14, 'MUNCH ADAMOU', 'Enzo', 'enzomunchadamou@gmail.com', '07 64 93 80 11', 7, 2),
-(15, 'MERHAB', 'Adam', 'adam.merhab@hotmail.fr', '06 17 38 60 54', 7, 2),
+(10, 'KAHLA', 'Iliasse', 'kahlailiasse@gmail.com', '07 38 50 12 67', 2, 2),
+(11, 'IDOUDI', 'Sayf-Eddine', 'sdoufi25@gmail.com', '06 95 48 26 73', 2, 2),
+(12, 'KINEIDER', 'Marc Ange', 'kineider.marc@laposte.net', '07 82 61 55 98', 2, 2),
+(13, 'LEAL DIAS SEMEDO', 'Sara', 'slealsemedo@gmail.com', '06 53 79 41 20', 2, 2),
+(14, 'MUNCH ADAMOU', 'Enzo', 'enzomunchadamou@gmail.com', '07 64 93 80 11', 2, 2),
+(15, 'MERHAB', 'Adam', 'adam.merhab@hotmail.fr', '06 17 38 60 54', 2, 2),
 (16, 'ABDELLI', 'Elyas', 'elyas.abdelli@gmail.com', '07 25 46 72 39', 6, 3),
 (17, 'ALLARD', 'Eden', 'eden.allard@gmail.com', '06 62 93 51 80', 6, 3),
 (18, 'ANOTHO EDOWIZA', 'Reynald', 'reynald.anotho.edowiza@gmail.com', '07 49 82 63 21', 6, 3),
@@ -194,32 +206,33 @@ INSERT INTO `etudiants` (`numEtudiant`, `nomEtudiant`, `prenomEtudiant`, `mailEt
 (20, 'BUGNOLI', 'Alexandre', 'a.bugnoli@gmail.com', '07 70 35 67 82', 6, 3),
 (21, 'GIRARD', 'Emilie ', 'emiliegirarddefr@gmail.com', '06 44 79 58 31', 6, 3),
 (22, 'KOUAIDIA', 'Adam ', 'kouaidia.adam@gmail.com', '07 96 72 34 59', 6, 3),
-(23, 'LAKHDAR EZZINE ', 'Mohamed Adel ', 'abdl.lkd13@gmail.com', '06 39 81 67 40', 6, 3),
-(24, 'LY', 'Murray Thomas Chizaram', 'lymurraymc@gmail.com', '07 53 26 58 14', 6, 3),
-(25, 'MALVY', 'Valentin Gilbert Philippe', 'valentin.malvy@hotmail.fr', '06 75 48 39 23', 6, 3),
-(26, 'MEBAOUDJ', 'Nawfel', 'nawfel.mebaoudj@hotmail.fr', '07 61 19 84 51', 6, 3),
-(27, 'POTARD', 'Joan Corto Jean', 'joan.potard@gmail.com', '06 56 30 72 64', 6, 3),
-(28, 'WELFRINGER', 'Dorian', 'd.welfringer@gmail.com', '06 24 65 87 13', 6, 3),
+(23, 'LAKHDAR EZZINE ', 'Mohamed Adel ', 'abdl.lkd13@gmail.com', '06 39 81 67 40', 4, 3),
+(24, 'LY', 'Murray Thomas Chizaram', 'lymurraymc@gmail.com', '07 53 26 58 14', 4, 3),
+(25, 'MALVY', 'Valentin Gilbert Philippe', 'valentin.malvy@hotmail.fr', '06 75 48 39 23', 4, 3),
+(26, 'MEBAOUDJ', 'Nawfel', 'nawfel.mebaoudj@hotmail.fr', '07 61 19 84 51', 4, 3),
+(27, 'POTARD', 'Joan Corto Jean', 'joan.potard@gmail.com', '06 56 30 72 64', 4, 3),
+(28, 'WELFRINGER', 'Dorian', 'd.welfringer@gmail.com', '06 24 65 87 13', 4, 3),
 (29, 'ALI', 'Moudjahidi', 'moudjahidi.ali@gmail.com', '07 80 52 34 97', 1, 1),
 (30, 'AZZI', 'Akram', 'a.azzi@gmail.com', '06 59 73 42 08', 1, 1),
 (31, 'BANDIERA', 'Gianni', 'gianni.bandiera.pro@hotmail.fr', '07 28 61 48 25', 1, 1),
 (32, 'BOURI', 'Houssam', 'h.bouri@gmail.com', '06 91 56 34 72', 1, 1),
 (33, 'CORDOVANA', 'Lucas', 'lucas.cordovana123@gmail.com', '07 35 80 67 14', 1, 1),
-(34, 'COULANGE', 'Matteo', 'm.coulange@gmail.com', '06 40 77 29 61', 1, 1),
-(35, 'DEBABO', 'Célia', 'celia.debabo@hotmail.fr', '07 68 53 42 09', 1, 1),
-(36, 'DELPORTO', 'Lorina', 'lorina.delporto@hotmail.fr', '06 74 52 18 83', 1, 1),
-(37, 'DOUCHET', 'Dylan', 'dylan.douchet@gmail.com', '07 21 46 88 54', 1, 1),
-(38, 'MSA', 'Elmira', 'elmira.msa@gmail.com', '06 89 32 51 70', 1, 1),
-(39, 'MADANI', 'Mouad', 'mouad.madani@gmail.com', '07 14 75 53 66', 1, 1),
-(40, 'MARSEL', 'Ghozlène', 'g.marsel@gmail.com', '06 61 47 32 58', 1, 1),
-(41, 'MEDMONE', 'Nadra', 'nadra.medmone@gmail.com', '07 39 60 19 81', 1, 1),
-(42, 'MOKAREM', 'Mohamed Fodhel', 'm.fodhel.mokarem@gmail.com', '06 55 76 91 23', 1, 1),
-(43, 'MOLLET', 'Oreyanne', 'oreyanne.mollet@gmail.com', '07 83 61 29 47', 1, 1),
-(44, 'MORIOT', 'Florent', 'florent.moriot@hotmail.fr', '06 72 54 63 85', 1, 1),
-(45, 'NGANDU-MUAMBA', 'Djelissa', 'djelissa.ngandu.muamba@gmail.com', '07 52 39 70 11', 1, 1),
-(46, 'QUINZII', 'Valentin', 'valentin.quinzii@hotmail.fr', '06 68 42 58 96', 1, 1),
-(47, 'RAINGEVAL', 'Hadrien', 'hadrien.raingeval.pro@hotmail.fr', '07 20 77 31 62', 1, 1),
-(48, 'SAIDI', 'Billal', 'billal.saidi@gmail.com', '06 37 83 69 21', 1, 1);
+(34, 'COULANGE', 'Matteo', 'm.coulange@gmail.com', '06 40 77 29 61', 10, 1),
+(35, 'DEBABO', 'Célia', 'celia.debabo@hotmail.fr', '07 68 53 42 09', 10, 1),
+(36, 'DELPORTO', 'Lorina', 'lorina.delporto@hotmail.fr', '06 74 52 18 83', 10, 1),
+(37, 'DOUCHET', 'Dylan', 'dylan.douchet@gmail.com', '07 21 46 88 54', 10, 1),
+(38, 'MSA', 'Elmira', 'elmira.msa@gmail.com', '06 89 32 51 70', 10, 1),
+(39, 'MADANI', 'Mouad', 'mouad.madani@gmail.com', '07 14 75 53 66', 5, 1),
+(40, 'MARSEL', 'Ghozlène', 'g.marsel@gmail.com', '06 61 47 32 58', 5, 1),
+(41, 'MEDMONE', 'Nadra', 'nadra.medmone@gmail.com', '07 39 60 19 81', 5, 1),
+(42, 'MOKAREM', 'Mohamed Fodhel', 'm.fodhel.mokarem@gmail.com', '06 55 76 91 23', 5, 1),
+(43, 'MOLLET', 'Oreyanne', 'oreyanne.mollet@gmail.com', '07 83 61 29 47', 5, 1),
+(44, 'MORIOT', 'Florent', 'florent.moriot@hotmail.fr', '06 72 54 63 85', 12, 1),
+(45, 'NGANDU-MUAMBA', 'Djelissa', 'djelissa.ngandu.muamba@gmail.com', '07 52 39 70 11', 12, 1),
+(46, 'QUINZII', 'Valentin', 'valentin.quinzii@hotmail.fr', '06 68 42 58 96', 12, 1),
+(47, 'RAINGEVAL', 'Hadrien', 'hadrien.raingeval.pro@hotmail.fr', '07 20 77 31 62', 12, 1),
+(48, 'SAIDI', 'Billal', 'billal.saidi@gmail.com', '06 37 83 69 21', 12, 1),
+(50, 'toufik', 'mohamed', 'toufikmohamed@gmail.com', '034782429', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -266,7 +279,7 @@ CREATE TABLE IF NOT EXISTS `professeurs` (
   `telProf` varchar(14) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `nbHeures` smallint DEFAULT NULL,
   PRIMARY KEY (`numProf`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Déchargement des données de la table `professeurs`
@@ -284,7 +297,8 @@ INSERT INTO `professeurs` (`numProf`, `nomProf`, `prenomProf`, `mailProf`, `telP
 (9, 'PEDUZZI', 'Nicolas', 'nicolas.peduzzi.prof@gmail.com', '07 56 78 90 12', NULL),
 (10, 'FRAYSSINHES', 'Laure', 'laure.frayssinhes.prof@gmail.com', '06 89 01 23 45', NULL),
 (11, 'GARNIER', 'Marine', 'marine.garnier.prof@gmail.com', '06 34 56 78 90', NULL),
-(12, 'NICOLAS', 'Julien', 'julien.nicolas@gmail.com', '07 12 34 56 78', NULL);
+(12, 'NICOLAS', 'Julien', 'julien.nicolas@gmail.com', '07 12 34 56 78', NULL),
+(13, 'administrateur', 'admin', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

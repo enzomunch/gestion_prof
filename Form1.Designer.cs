@@ -36,6 +36,7 @@
             this.btnValider = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chkAffMdp = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +112,18 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // chkAffMdp
+            // 
+            this.chkAffMdp.AutoSize = true;
+            this.chkAffMdp.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAffMdp.Location = new System.Drawing.Point(358, 288);
+            this.chkAffMdp.Name = "chkAffMdp";
+            this.chkAffMdp.Size = new System.Drawing.Size(158, 19);
+            this.chkAffMdp.TabIndex = 7;
+            this.chkAffMdp.Text = "afficher le mot de passe";
+            this.chkAffMdp.UseVisualStyleBackColor = true;
+            this.chkAffMdp.CheckedChanged += new System.EventHandler(this.chkAffMdp_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -118,6 +131,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(750, 416);
             this.ControlBox = false;
+            this.Controls.Add(this.chkAffMdp);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnValider);
@@ -147,6 +161,7 @@
         private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox chkAffMdp;
     }
 }
 

@@ -27,22 +27,48 @@ namespace gestion_prof
         {
             MySqlConnection connexion_stages = new MySqlConnection("database = gestion_prof; server = localhost; user id = root; mdp=");
             try
+
             {
                 // Requête pour récupérer la liste des stages
                 connexion_stages.Open();
-                MySqlCommand cmd_stages = new MySqlCommand("SELECT nomEtudiant,prenomEtudiant,nomTuteur,dateStageDebut,dateStageFin FROM etudiants INNER JOIN stages ON stages.numEtudiant = etudiants.numEtudiant INNER JOIN tuteurs ON stages.numTuteur = tuteurs.numTuteur", connexion_stages);
-                // Execution de la requete 
-                MySqlDataReader grille_stages = cmd_stages.ExecuteReader();
-                //
-                while (grille_stages.Read())
-                {
-                    dataGridViewStage.Rows.Add(
-                        grille_stages[0],
-                        grille_stages[1],
-                        grille_stages[2],
-                        grille_stages[3],
-                        grille_stages[4]);
+                if(Globals.keyProf == 13) {
+                    MySqlCommand cmd_stages = new MySqlCommand("SELECT nomEtudiant,prenomEtudiant,nomTuteur,dateStageDebut,dateStageFin FROM etudiants " +
+                    "INNER JOIN stages ON stages.numEtudiant = etudiants.numEtudiant " +
+                    "INNER JOIN tuteurs ON stages.numTuteur = tuteurs.numTuteur ", connexion_stages);
+                    // Execution de la requete 
+                    MySqlDataReader grille_stages = cmd_stages.ExecuteReader();
+                    //
+                    dataGridViewStage.Rows.Clear();
+                    while (grille_stages.Read())
+                    {
+                        dataGridViewStage.Rows.Add(
+                            grille_stages[0],
+                            grille_stages[1],
+                            grille_stages[2],
+                            grille_stages[3],
+                            grille_stages[4]);
+                    }
                 }
+                else
+                {
+                    MySqlCommand cmd_stages = new MySqlCommand("SELECT nomEtudiant,prenomEtudiant,nomTuteur,dateStageDebut,dateStageFin FROM etudiants " +
+                    "INNER JOIN stages ON stages.numEtudiant = etudiants.numEtudiant " +
+                    "INNER JOIN tuteurs ON stages.numTuteur = tuteurs.numTuteur WHERE etudiants.numProf = " + Globals.keyProf, connexion_stages);
+                    // Execution de la requete 
+                    MySqlDataReader grille_stages = cmd_stages.ExecuteReader();
+                    //
+                    dataGridViewStage.Rows.Clear();
+                    while (grille_stages.Read())
+                    {
+                        dataGridViewStage.Rows.Add(
+                            grille_stages[0],
+                            grille_stages[1],
+                            grille_stages[2],
+                            grille_stages[3],
+                            grille_stages[4]);
+                    }
+                }
+
             }
             catch
             {

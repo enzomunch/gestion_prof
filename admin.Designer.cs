@@ -47,6 +47,7 @@ namespace gestion_prof
             this.cboClasse = new System.Windows.Forms.ComboBox();
             this.cboProf = new System.Windows.Forms.ComboBox();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnEnregistrer
@@ -103,26 +104,28 @@ namespace gestion_prof
             this.btnReinitialiser.Text = "Reinitialiser";
             this.btnReinitialiser.UseVisualStyleBackColor = true;
             this.btnReinitialiser.Visible = false;
+            this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
             // 
             // labNom
             // 
             this.labNom.AutoSize = true;
             this.labNom.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labNom.Location = new System.Drawing.Point(93, 65);
+            this.labNom.Location = new System.Drawing.Point(84, 65);
             this.labNom.Name = "labNom";
-            this.labNom.Size = new System.Drawing.Size(45, 16);
+            this.labNom.Size = new System.Drawing.Size(54, 16);
             this.labNom.TabIndex = 5;
-            this.labNom.Text = "Nom :";
+            this.labNom.Text = "Nom : *";
+            this.labNom.Click += new System.EventHandler(this.labNom_Click);
             // 
             // labPrenom
             // 
             this.labPrenom.AutoSize = true;
             this.labPrenom.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labPrenom.Location = new System.Drawing.Point(71, 112);
+            this.labPrenom.Location = new System.Drawing.Point(63, 112);
             this.labPrenom.Name = "labPrenom";
-            this.labPrenom.Size = new System.Drawing.Size(66, 16);
+            this.labPrenom.Size = new System.Drawing.Size(75, 16);
             this.labPrenom.TabIndex = 6;
-            this.labPrenom.Text = "Prénom :";
+            this.labPrenom.Text = "Prénom : *";
             // 
             // labMail
             // 
@@ -219,11 +222,22 @@ namespace gestion_prof
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 468);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 14);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "* = champs obligatoires";
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 507);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.cboProf);
             this.Controls.Add(this.cboClasse);
@@ -273,5 +287,6 @@ namespace gestion_prof
         private System.Windows.Forms.ComboBox cboClasse;
         private System.Windows.Forms.ComboBox cboProf;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Label label1;
     }
 }

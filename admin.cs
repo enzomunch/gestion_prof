@@ -133,48 +133,73 @@ namespace gestion_prof
 
         private void btnRechercher_Click(object sender, EventArgs e)
         {
-            btnEnregistrer.Visible = false;
-            btnModifier.Visible = true;
-            btnReinitialiser.Visible = true;
-            btnSupprimer.Visible = true;
-
-            //
-            MySqlConnection connexion = new MySqlConnection("database=gestion_prof; server=localhost; user id =root; mdp=");
-            connexion.Open();
-            //memorisation de la requete de recherche
-            MySqlCommand cmd = new MySqlCommand("SELECT nomEtudiant, prenomEtudiant, mailEtudiant, telEtudiant, nomProf, nomClasse from etudiants INNER JOIN professeurs ON professeurs.numProf = etudiants.numProf INNER JOIN classes ON classes.numClasse = etudiants.numClasse WHERE nomEtudiant LIKE '%" + txtNom.Text + "%' AND prenomEtudiant LIKE '%" + txtPrenom.Text + "%'", connexion);
-            // execution de la requete
-            MySqlDataReader recherche = cmd.ExecuteReader();
-            
-            //test si il a trouver l'étudiant
-            if (recherche.HasRows)
+            if (txtNom.Text != "" && txtPrenom.Text != "" )
             {
-                //lecture de l'enregistrement 
-                recherche.Read();
-                //
-                // affectation des champs dans les zones textes
-                txtNom.Text = recherche.GetValue(0).ToString();
-                txtPrenom.Text = recherche.GetValue(1).ToString();
-                txtMail.Text = recherche.GetValue(2).ToString();
-                txtTel.Text = recherche.GetValue(3).ToString();
-                cboProf.Text = recherche.GetValue(4).ToString();
-                cboClasse.Text = recherche.GetValue(5).ToString();
+                btnEnregistrer.Visible = false;
+                btnModifier.Visible = true;
+                btnReinitialiser.Visible = true;
+                btnSupprimer.Visible = true;
 
-                //femeture
-                connexion.Close();
+
+                MySqlConnection connexion = new MySqlConnection("database=gestion_prof; server=localhost; user id =root; mdp=");
+                connexion.Open();
+                //memorisation de la requete de recherche
+                MySqlCommand cmd = new MySqlCommand("SELECT nomEtudiant, prenomEtudiant, mailEtudiant, telEtudiant, nomProf, nomClasse from etudiants INNER JOIN professeurs ON professeurs.numProf = etudiants.numProf INNER JOIN classes ON classes.numClasse = etudiants.numClasse WHERE nomEtudiant LIKE '%" + txtNom.Text + "%' AND prenomEtudiant LIKE '%" + txtPrenom.Text + "%'", connexion);
+                // execution de la requete
+                MySqlDataReader recherche = cmd.ExecuteReader();
+
+                //test si il a trouver l'étudiant
+                if (recherche.HasRows)
+                {
+                    //lecture de l'enregistrement 
+                    recherche.Read();
+                    //
+                    // affectation des champs dans les zones textes
+                    txtNom.Text = recherche.GetValue(0).ToString();
+                    txtPrenom.Text = recherche.GetValue(1).ToString();
+                    txtMail.Text = recherche.GetValue(2).ToString();
+                    txtTel.Text = recherche.GetValue(3).ToString();
+                    cboProf.Text = recherche.GetValue(4).ToString();
+                    cboClasse.Text = recherche.GetValue(5).ToString();
+
+                    //femeture
+                    connexion.Close();
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Etudiant non trouvé ", "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtNom.Clear();
+                    txtPrenom.Clear();
+                    txtMail.Clear();
+                    txtTel.Clear();
+                    //fermeture
+                    connexion.Close();
+                }
 
 
             }
             else
             {
-                MessageBox.Show("Etudiant non trouvé ", "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNom.Clear();
-                txtPrenom.Clear();
-                txtMail.Clear();
-                txtTel.Clear();
-                //fermeture
-                connexion.Close();
+                MessageBox.Show("Veuillez remplir les champs obligatoires", "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        private void btnReinitialiser_Click(object sender, EventArgs e)
+        {
+            btnModifier.Visible = false;
+            btnSupprimer.Visible = false;
+            btnReinitialiser.Visible = false;
+            btnEnregistrer.Visible = true;
+            txtNom.Clear();
+            txtPrenom.Clear();
+            txtMail.Clear();
+            txtTel.Clear();
+        }
+
+        private void labNom_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

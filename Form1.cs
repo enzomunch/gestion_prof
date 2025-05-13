@@ -59,7 +59,19 @@ namespace gestion_prof
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            
+            txtMdp.UseSystemPasswordChar = true;
+        }
+
+        private void chkAffMdp_CheckedChanged(object sender, System.EventArgs e)
+        {
+            if (chkAffMdp.Checked)
+            {
+                txtMdp.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtMdp.UseSystemPasswordChar = true;
+            }
         }
     }
 }
